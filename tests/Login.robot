@@ -21,7 +21,7 @@ Cenário: User Login
     User Should Be Logged In        ${user}
     
 Cenário: Incorrect Pass
-    [Tags]      incorrect_pass
+    [Tags]      attempt_login       incorrect_pass
 
     ${user}     Create Dictionary       email=rteste@gmail.com       password=abc123
 
@@ -32,7 +32,7 @@ Cenário: Incorrect Pass
 
 
 Cenário: User Not Found
-    [Tags]      user_404
+    [Tags]      attempt_login       user_404
 
     ${user}     Create Dictionary       email=teste404@teste.com       password=abc123
 
@@ -43,7 +43,7 @@ Cenário: User Not Found
 
 
 Cenário: Incorrect Email
-    [Tags]      incorrect_email
+    [Tags]      attempt_login       incorrect_email
 
     ${user}     Create Dictionary       email=teste.teste.com       password=abc123
 
@@ -51,3 +51,42 @@ Cenário: Incorrect Email
     Fill Credentials        ${user}
     Submit Credentials
     Should Be Type Email
+
+#   Desafio 1 modulo PRO
+
+#Automatizar 3 novos casos de testes: Email obrigatório, Senha obrigatória, e Campos obrigatórios
+
+Cenário: Mandatory Email
+    [Tags]      attempt_login       challenge_req_fields       mandatory_email
+
+    ${user}     Create Dictionary       email=       password=abc123
+
+    Go To Login Page
+    Fill Credentials        ${user}
+    Submit Credentials
+    Alert Span Should Be      E-mail obrigatório
+
+
+Cenário: Mandatory Password
+
+    [Tags]      attempt_login       challenge_req_fields       mandatory_password
+
+    ${user}     Create Dictionary       email=teste@teste.com       password=
+
+    Go To Login Page
+    Fill Credentials        ${user}
+    Submit Credentials
+    Alert Span Should Be      Senha obrigatória
+
+
+Cenário: Mandatory Login Fields
+
+    [Tags]      attempt_login       challenge_req_fields       mandatory_fields
+
+    @{expected_alerts}      Create List
+    ...                     E-mail obrigatório
+    ...                     Senha obrigatória
+
+    Go To Login Page
+    Submit Credentials
+    Alert Spans Should Be       ${expected_alerts}

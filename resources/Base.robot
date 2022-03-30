@@ -6,6 +6,7 @@ Library             Browser
 Library             Collections
 Library             factories/Users.py
 
+Resource            actions/ActionsBeGeek.robot
 Resource            actions/ActionsLogin.robot
 Resource            actions/ActionsShared.robot
 Resource            actions/ActionsSignup.robot

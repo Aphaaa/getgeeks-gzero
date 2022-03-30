@@ -41,3 +41,19 @@ def factory_user_login():
         'password': 'Teste123*'
     }
 
+
+def factory_user_be_geek():
+
+    return {
+        'name': 'Kin',
+        'lastname': 'Dotcom',
+        'email': 'kin@dot.com',
+        'password': 'Teste123*',
+        'geek_profile':{
+            'whatsapp': '11999999999',
+            'description': 'Faço a formatação do seu Desktop e/ou Notebook, Faço a instalação do sistema operacional Windowns e Linux e tambem a instalação do pacote office.',
+            'printer_repair': 'Não',
+            'work': 'Ambos',
+            'cost': '150'
+        }
+    }

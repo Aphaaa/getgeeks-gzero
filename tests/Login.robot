@@ -59,7 +59,7 @@ Cenário: Incorrect Email
 Cenário: Mandatory Email
     [Tags]      attempt_login       challenge_req_fields       mandatory_email
 
-    ${user}     Create Dictionary       email=       password=abc123
+    ${user}     Create Dictionary       email=${EMPTY}       password=abc123
 
     Go To Login Page
     Fill Credentials        ${user}
@@ -71,7 +71,7 @@ Cenário: Mandatory Password
 
     [Tags]      attempt_login       challenge_req_fields       mandatory_password
 
-    ${user}     Create Dictionary       email=teste@teste.com       password=
+    ${user}     Create Dictionary       email=teste@teste.com       password=${EMPTY}
 
     Go To Login Page
     Fill Credentials        ${user}

@@ -8,20 +8,16 @@ Test Teardown       Finish Session
 
 *Test Cases*
 Cenário: Be a Geek
-    [Tags]      happy
+    [Tags]      happy_cadgeek       smoke_test
 
     # Dado que eu tenho um usuário comum
-    ${user}         Factory User Be Geek
-    
+    ${user}         Factory User        be_geek
     # E faço login na aplicação
     Do Login                ${user}
-
     # Quando submeto o formulário para me tornar um geek (prestador de serviço)
-    Submit Be a Geek
+    Go To Geek Form
     Fill Geek Form          ${user}[geek_profile]
     Submit Geek Form
-
     # Então devo ver a mensagem de sucesso
     Geek Should Be Registered
-
 

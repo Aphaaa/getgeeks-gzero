@@ -9,9 +9,9 @@ Test Teardown       Finish Session
 
 *Test Cases*
 Cenário: Cadastro de cliente
-    [Tags]      happy
+    [Tags]      cad_happy       smoke_test
 
-    ${user}     Factory User
+    ${user}     Factory User        faker
 
     # Dado que acesso a página de cadastro 
     Go To Signup Form
@@ -25,7 +25,7 @@ Cenário: Cadastro de cliente
 Cenário: E-mail duplicado
     [Tags]      attempt_signup      duplicate_email
 
-    ${user}                 Factory User
+    ${user}     Factory User        faker
 
     Add User From Database  ${user}
 
@@ -41,7 +41,7 @@ Cenário: E-mail duplicado
 Cenário: Email com formato incorreto
     [Tags]      attempt_signup      wrong_email
 
-    ${user}                 factory_wrong_email
+    ${user}     Factory User        wrong_email
 
     # Dado que acesso a página de cadastro 
     Go To Signup Form

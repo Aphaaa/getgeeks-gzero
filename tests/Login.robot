@@ -8,9 +8,9 @@ Test Teardown       Finish Session
 
 *Test Cases*
 Cenário: User Login
-    [Tags]      login_happy
+    [Tags]      login_happy     smoke_test
 
-    ${user}                     Factory User Login
+    ${user}     Factory User        login
 
     # Dado que acesso a página de Login 
     Go To Login Page

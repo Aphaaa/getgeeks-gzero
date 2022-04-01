@@ -3,7 +3,7 @@ Documentation       Atempt begeek test suite
 
 Resource            ${EXECDIR}/resources/Base.robot
 
-Suite Setup          Start Session For Attempt Be a Geek
+Suite Setup         Start Session For Attempt Be a Geek
 Test Template       Attempt Be a Geek
 
 *Variables*
@@ -37,8 +37,8 @@ Attempt Be a Geek
     Submit Geek Form
     # Então devo ver a mensagem de sucesso
     Alert Span Should Be        ${output_message}
-    Take Screenshot             fullPage=True
-
+    
+    After Test
 
 Start Session For Attempt Be a Geek
     

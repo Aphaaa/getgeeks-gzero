@@ -5,6 +5,7 @@ Documentation       Base test
 Library             Browser
 Library             Collections
 Library             factories/Users.py
+Library             Utils.py
 
 Resource            actions/ActionsBeGeek.robot
 Resource            actions/ActionsLogin.robot
@@ -20,10 +21,11 @@ ${BASE_URL}         https://getgeeks-r3.herokuapp.com
 
 *Keywords*
 Start Session
-    New Browser             ${BROWSER}      ${HEADLESS    slowMo=00:00:00
+    New Browser             ${BROWSER}      ${HEADLESS}    slowMo=00:00:00
     New Page                ${BASE_URL}
     Set View Port Size      1280            768
 
 
-Finish Session
-    Take Screenshot         fullPage=True
+After Test
+    ${shot_name}            Screenshot Name
+    Take Screenshot         fullPage=True       filename=${shot_name}

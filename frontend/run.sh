@@ -1,6 +1,7 @@
 ###########################################################################################
 ####          Linha de comando para execução delorean (limpa a base de testes)         ####
-robot -l NONE -o NONE -r NONE tasks/delorean.robot
+###########################################################################################
+robot -l NONE -o NONE -r NONE tasks/Delorean.robot
 
 ###########################################################################################
 ####       Linha de comando para execução de cenários de testes baseados em Tags       ####
@@ -26,13 +27,13 @@ robot -l NONE -o NONE -r NONE tasks/delorean.robot
 ###########################################################################################
 #robot -d ./logs -v BROWSER:chromium -v HEADLESS:True -i smoke_test tests
 #pabot -x xunit.xml -d ./logs -v BROWSER:chromium -v HEADLESS:True -e smoke_test tests
-pabot -x xunit.xml -d ./logs -v BROWSER:chromium -v HEADLESS:True -i smoke_test tests
+#pabot -x xunit.xml -d ./logs -v BROWSER:chromium -v HEADLESS:True -i smoke_test tests
 
 ###########################################################################################
 ####          Linha de comando para execução da bateria de testes regressivos           ####
 ###########################################################################################
 #robot -d ./logs -v BROWSER:chromium -v HEADLESS:False tests/
-#pabot -x xunit.xml -d ./logs -v BROWSER:chromium -v HEADLESS:True tests/
+pabot -x xunit.xml -d ./logs -v BROWSER:chromium -v HEADLESS:True tests/
 
 
 

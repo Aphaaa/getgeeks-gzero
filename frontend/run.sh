@@ -25,8 +25,8 @@ robot -l NONE -o NONE -r NONE tasks/delorean.robot
 ####          Linha de comando para execução da bateria de Smoke tests                 ####
 ###########################################################################################
 #robot -d ./logs -v BROWSER:chromium -v HEADLESS:True -i smoke_test tests
-pabot -x xunit.xml -d ./logs -v BROWSER:chromium -v HEADLESS:True -e smoke_test tests
-
+#pabot -x xunit.xml -d ./logs -v BROWSER:chromium -v HEADLESS:True -e smoke_test tests
+pabot -x xunit.xml -d ./logs -v BROWSER:chromium -v HEADLESS:True -i smoke_test tests
 
 ###########################################################################################
 ####          Linha de comando para execução da bateria de testes regressivos           ####

@@ -4,8 +4,11 @@ Documentation       Base test
 #Boa pratica: manter sempre as bibliotecas e Resources em ordem alfabetica
 Library             Browser
 Library             Collections
+Library             String
+
 Library             factories/Users.py
 Library             Utils.py
+
 
 Resource            actions/ActionsBeGeek.robot
 Resource            actions/ActionsLogin.robot
@@ -14,6 +17,7 @@ Resource            actions/ActionsSignup.robot
 
 Resource            Database.robot
 Resource            Helpers.robot
+Resource            Services.robot
 
 *Variables*
 ${BASE_URL}         https://getgeeks-r3.herokuapp.com
